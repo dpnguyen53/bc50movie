@@ -1,2 +1,10 @@
 ====== Buoi 8 ======
- - React Router Dom
+ - Routing - React Router Dom
+ - Home Template
+ - Admin Template
+
+====== Buoi 9 ======
+ - Routing - React Router Dom (Advanced)
+ - Call Api
+ - Middleware Async Action: redux thunk
+ - Refactor Api util
