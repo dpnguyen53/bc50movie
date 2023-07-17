@@ -18,6 +18,10 @@ const routes = [
         path: "list-movie",
         element: lazy(() => import("./../pages/HomeTemplate/ListMoviePage")),
       },
+      {
+        path: "hooks",
+        element: lazy(() => import("./../pages/HomeTemplate/HooksPage")),
+      },
     ],
   },
   {

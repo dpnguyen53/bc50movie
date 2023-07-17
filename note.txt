@@ -6,5 +6,11 @@
 ====== Buoi 9 ======
  - Routing - React Router Dom (Advanced)
  - Call Api
+
+ ====== Buoi 10 ======
  - Middleware Async Action: redux thunk
  - Refactor Api util
+ - HOOKS
+
+
+ - Detail Movie
