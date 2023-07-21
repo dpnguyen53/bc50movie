@@ -22,6 +22,10 @@ const routes = [
         path: "hooks",
         element: lazy(() => import("./../pages/HomeTemplate/HooksPage")),
       },
+      {
+        path: "detail/:id",
+        element: lazy(() => import("./../pages/HomeTemplate/DetailMoviePage")),
+      },
     ],
   },
   {
@@ -37,6 +41,10 @@ const routes = [
         element: lazy(() => import("./../pages/AdminTemplate/AddUser")),
       },
     ],
+  },
+  {
+    path: "auth",
+    element: lazy(() => import("./../pages/AdminTemplate/AuthPage")),
   },
 ];
 

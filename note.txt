@@ -12,5 +12,10 @@
  - Refactor Api util
  - HOOKS
 
-
+ ====== Buoi 11 ======
  - Detail Movie
+ - Auth
+
+
+ 
+ - Guard Routing Admin
