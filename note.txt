@@ -16,6 +16,11 @@
  - Detail Movie
  - Auth
 
+====== Buoi 12 ======
+ - Guard Routing Admin
+ - Add User
+
+
 
  
- - Guard Routing Admin
+ - alias
