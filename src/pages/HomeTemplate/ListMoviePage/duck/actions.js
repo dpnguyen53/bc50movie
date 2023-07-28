@@ -3,7 +3,7 @@ import {
   LIST_MOVIE_SUCCESS,
   LIST_MOVIE_FAIL,
 } from "./constants";
-import api from "./../../../../utils/apiUtil";
+import api from "utils/apiUtil";
 
 //call API
 export const actFetchListMovie = () => {

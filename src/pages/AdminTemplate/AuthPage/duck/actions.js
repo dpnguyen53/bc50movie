@@ -1,5 +1,5 @@
 import { AUTH_REQUEST, AUTH_SUCCESS, AUTH_FAIL } from "./constants";
-import api from "./../../../../utils/apiUtil";
+import api from "utils/apiUtil";
 
 export const actAuth = (user, navigate) => {
   return (dispatch) => {

@@ -1,5 +1,5 @@
 import * as ActionTypes from "./constants";
-import api from "../../../../utils/apiUtil";
+import api from "utils/apiUtil";
 
 export const actAddUser = (user) => {
   return (dispatch) => {

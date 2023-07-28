@@ -6,6 +6,7 @@ import "jquery/dist/jquery.min.js";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 
 import "./index.css";
+import "./scss/index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import store from "./store";

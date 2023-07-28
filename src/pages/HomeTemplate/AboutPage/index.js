@@ -1,11 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
+import Nhanvien from "./nhanvien";
+import Sanpham from "./sanpham";
+import Withcard from "./withcard";
 
-export default class AboutPage extends Component {
-  render() {
-    return (
-      <div>
-        <h3>AboutPage</h3>
-      </div>
-    );
-  }
+const WrapperCard = Withcard(Nhanvien);
+
+export default function AboutPage() {
+  return <WrapperCard />;
 }

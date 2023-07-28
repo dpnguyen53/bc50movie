@@ -3,7 +3,7 @@ import {
   DETAIL_MOVIE_SUCCESS,
   DETAIL_MOVIE_FAIL,
 } from "./constants";
-import api from "./../../../../utils/apiUtil";
+import api from "utils/apiUtil";
 
 export const actFetchDetailMovie = (id) => {
   return (dispatch) => {

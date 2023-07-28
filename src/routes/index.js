@@ -4,47 +4,47 @@ import { lazy } from "react";
 const routes = [
   {
     path: "",
-    element: lazy(() => import("./../pages/HomeTemplate")),
+    element: lazy(() => import("pages/HomeTemplate")),
     nested: [
       {
         path: "",
-        element: lazy(() => import("./../pages/HomeTemplate/HomePage")),
+        element: lazy(() => import("pages/HomeTemplate/HomePage")),
       },
       {
         path: "about",
-        element: lazy(() => import("./../pages/HomeTemplate/AboutPage")),
+        element: lazy(() => import("pages/HomeTemplate/AboutPage")),
       },
       {
         path: "list-movie",
-        element: lazy(() => import("./../pages/HomeTemplate/ListMoviePage")),
+        element: lazy(() => import("pages/HomeTemplate/ListMoviePage")),
       },
       {
         path: "hooks",
-        element: lazy(() => import("./../pages/HomeTemplate/HooksPage")),
+        element: lazy(() => import("pages/HomeTemplate/HooksPage")),
       },
       {
         path: "detail/:id",
-        element: lazy(() => import("./../pages/HomeTemplate/DetailMoviePage")),
+        element: lazy(() => import("pages/HomeTemplate/DetailMoviePage")),
       },
     ],
   },
   {
     path: "admin",
-    element: lazy(() => import("./../pages/AdminTemplate")),
+    element: lazy(() => import("pages/AdminTemplate")),
     nested: [
       {
         path: "dashboard",
-        element: lazy(() => import("./../pages/AdminTemplate/Dashboard")),
+        element: lazy(() => import("pages/AdminTemplate/Dashboard")),
       },
       {
         path: "add-user",
-        element: lazy(() => import("./../pages/AdminTemplate/AddUser")),
+        element: lazy(() => import("pages/AdminTemplate/AddUser")),
       },
     ],
   },
   {
     path: "auth",
-    element: lazy(() => import("./../pages/AdminTemplate/AuthPage")),
+    element: lazy(() => import("pages/AdminTemplate/AuthPage")),
   },
 ];
 

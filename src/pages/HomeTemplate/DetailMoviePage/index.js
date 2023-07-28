@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { actFetchDetailMovie } from "./duck/actions";
 import { useSelector, useDispatch } from "react-redux";
-import Loader from "./../../../components/Loader";
+import Loader from "components/Loader";
 
 function DetailMoviePage(props) {
   const params = useParams();
