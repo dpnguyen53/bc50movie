@@ -1,4 +1,9 @@
-import { AUTH_REQUEST, AUTH_SUCCESS, AUTH_FAIL } from "./constants";
+import {
+  AUTH_REQUEST,
+  AUTH_SUCCESS,
+  AUTH_FAIL,
+  AUTH_CLEAR_DATA,
+} from "./constants";
 
 const initialState = {
   loading: false,
@@ -24,6 +29,12 @@ const authReducer = (state = initialState, action) => {
       state.loading = false;
       state.data = null;
       state.error = action.payload;
+      return { ...state };
+
+    case AUTH_CLEAR_DATA:
+      state.loading = false;
+      state.data = null;
+      state.error = null;
       return { ...state };
 
     default:

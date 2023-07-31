@@ -1,7 +1,8 @@
 import axios from "axios";
+import config from "./../config";
 
 const api = axios.create({
-  baseURL: "https://movienew.cybersoft.edu.vn/api/",
+  baseURL: config.apiUrl,
 });
 
 api.interceptors.request.use((config) => {

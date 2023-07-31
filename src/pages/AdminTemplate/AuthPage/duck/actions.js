@@ -1,5 +1,13 @@
-import { AUTH_REQUEST, AUTH_SUCCESS, AUTH_FAIL } from "./constants";
+import {
+  AUTH_REQUEST,
+  AUTH_SUCCESS,
+  AUTH_FAIL,
+  AUTH_CLEAR_DATA,
+} from "./constants";
 import api from "utils/apiUtil";
+
+//Giả sử BE trả time exp 60 * 60 * 1000
+const TIME_EXP = 60 * 60 * 1000;
 
 export const actAuth = (user, navigate) => {
   return (dispatch) => {
@@ -24,6 +32,14 @@ export const actAuth = (user, navigate) => {
             return Promise.reject(error);
           }
 
+          //tính thời gian hết hạn (tương lai = time now + exp)
+          const date = new Date().getTime();
+          const exp = date + TIME_EXP;
+          //setLocalStorage exp
+          localStorage.setItem("exp", exp);
+          //dispatch tới action timoutLogout;
+          dispatch(actTimeoutLogout(navigate, TIME_EXP));
+
           //QuanTri => lưu thông tin user
           dispatch(actAuthSuccess(user));
 
@@ -37,6 +53,49 @@ export const actAuth = (user, navigate) => {
       .catch((error) => {
         dispatch(actAuthFail(error));
       });
+  };
+};
+
+export const actLogout = (navigate) => {
+  //remove localStorage removeItem()
+  localStorage.removeItem("UserAdmin");
+  localStorage.removeItem("exp");
+
+  //redirect /auth
+  navigate("/auth", { replace: true });
+
+  //clear auth reducer
+  return {
+    type: AUTH_CLEAR_DATA,
+  };
+};
+
+const actTimeoutLogout = (navigate, exp) => {
+  return (dispatch) => {
+    setTimeout(() => {
+      dispatch(actLogout(navigate));
+    }, exp);
+  };
+};
+
+export const actTryLogin = (navigate) => {
+  return (dispatch) => {
+    const user = JSON.parse(localStorage.getItem("UserAdmin"));
+
+    if (!user) return;
+
+    const exp = localStorage.getItem("exp");
+    const date = new Date().getTime();
+
+    if (date > exp) {
+      //logout
+      dispatch(actLogout(navigate));
+      return;
+    }
+
+    //set timeout
+    dispatch(actTimeoutLogout(navigate, exp - date));
+    dispatch(actAuthSuccess(user));
   };
 };
 
